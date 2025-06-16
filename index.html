@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- seed 2023.6.7 nutri-pop -->
+
+    <title>Paris avec toi</title>
+    <meta name="description" content="Mixed media art project">
+    <meta name="author"      content="zl">
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ MICRODATA -->
+    <meta property="og:url"          content="">
+    <meta property="og:image"        content="">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:type"         content="article">
+    <meta property="og:locale"       content="en_US">
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ FAVICON -->
+    <meta name="theme-color"             content="#314159">
+    <meta name="msapplication-TileColor" content="#314159">
+    <meta name="msapplication-TileImage" content="art/icon512.png">
+    <link rel="icon" type="image/png"       href="art/icon512.png">
+    <link rel="apple-touch-icon"            href="art/icon512.png">
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ༼°▽°༽ ~ BOOT SERVICE -->
+    <style>
+        html    { margin:0; padding:0  0.25rem; }
+        body    { margin:0; padding:0; height:auto; width:100%; }
+        img,svg { margin:0; border: 0; max-width:100%; display:block; }
+        body    { overflow-y:scroll; }
+    </style>
+
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ GOOGLE FONTS 2023 -->
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link
+        media="none" onload="if(media!='all')media='all'"
+        href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700&subset=cyrillic"
+        rel="stylesheet">
+    <link
+        media="none" onload="if(media!='all')media='all'"
+        href="https://fonts.googleapis.com/css?family=VT323"
+        rel="stylesheet">
+
+    <noscript>
+    <link
+        media="all"
+        href="https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700&subset=cyrillic"
+        rel="stylesheet">
+    <link
+        media="all"
+        href="https://fonts.googleapis.com/css?family=VT323"
+        rel="stylesheet">
+    </noscript>
+
+    <style>
+        body {
+            font-family: var(--font-family, sans-serif);
+          --font-family: var(--font-family-tufte-serif);
+          --font-family-tufte-serif:
+                Vollkorn, et-book, Palatino,
+               "Palatino Linotype","Palatino LT STD","Book Antiqua",
+                Georgia, serif,
+               "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        }
+    </style>
+
+
+    <style id="typografy">
+
+        h1, h2, h3, h4, h5, h6 {
+            margin:  0;
+            padding: 0;
+            font-family: inherit;
+            font-size:   inherit;
+            line-height: inherit;
+            font-weight: inherit;
+        }
+
+        p, blockquote {
+            margin:  0 0 1em 0;
+            padding: 0;
+            font:    inherit;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <article article-chapter>
+        <header>
+            <h1>
+                Entrée
+                <small>/ enter</small>
+            </h1>
+            <p>June 16, 2025</p>
+        </header>
+        <section>
+            <p>
+                The project is dedicated to the process of creation. In fact you are visiting a nice web-gallery of holiday trip into the city of Paris. In the background there is a path of creation where each step does matter. This including background story, involved people, used technologies and even the art of coding.
+            </p>
+            <p>
+                This one is the experiment to display and test an idea:
+                <b>To achieve magical results, try to keep the magic at every stage of creation.</b>
+            </p>
+        </section>
+    </article>
+
+    <article article-chapter>
+        <header>
+            <h1>
+                Le menu
+                <small>/ The menu</small>
+            </h1>
+        </header>
+        <section gallery-menu>
+            <figure>
+                <img src="art/flash/IMG_7775.JPG" alt="">
+            </figure>
+            <figure>
+                <img src="art/flash/IMG_7778.JPG" alt="">
+            </figure>
+            <figure>
+                <img src="art/flash/IMG_7792.JPG" alt="">
+            </figure>
+        </section>
+    </article>
+
+    <article>
+
+        <header> The Code </header>
+
+        <style display-source>
+            [display-source] {
+                display:     block;
+                padding:     0 1em 2em;
+                font-family: monospace;
+                white-space: pre-wrap;
+            }
+        </style>
+
+        <style display-source>
+            /* colors */
+
+            :root {
+              --colorNobleBlack:  hsl(226, 15%, 12%);
+              --colorNobleWhite:  hsl(226, 27%, 90%);
+              --colorNobleNight:  hsl(226, 17%, 20%);
+              --colorNobleDay:    hsl(226, 32%, 75%);
+              --colorNobleSky:    hsl(204, 22%, 55%);
+              --colorNobleSea:    hsl(212, 34%, 29%);
+              --colorNobleSunset: hsl(359, 28%, 82%);
+              --colorNobleAccent: hsl(359, 54%, 53%);
+              --colorNobleAction: hsl(359, 59%, 43%);
+            }
+
+            body {
+              --background-color: var(--colorNobleBlack);
+              --color:            var(--colorNobleWhite);
+                background-color: var(--background-color);
+                color:            var(--color);
+            }
+        </style>
+
+        <style display-source>
+            /* gallery layouts */
+
+            figure, figcaption {
+                display: block;
+                margin:  0;
+                padding: 0;
+                border:  0;
+                white-space: normal;
+            }
+
+            [gallery-menu] {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 1rem;
+            }
+            [gallery-menu] img {
+                aspect-ratio: 1/1;
+                object-fit: cover;
+            }
+        </style>
+
+        <style display-source>
+            [article-chapter] {
+                min-height:  100vh;
+                font-size:   1.24rem;
+                line-height: 1.5;
+            }
+            [article-chapter] header {
+                margin-bottom: 1.24em;
+            }
+            [article-chapter] header h1 {
+                font-size: 4rem;
+                border-bottom: solid 0.12em currentColor;
+                margin-bottom: 0.12em;
+                vertical-align: top;
+            }
+            [article-chapter] header h1 small {
+                font-size: 0.42em;
+                display:   inline-block;
+                color:     var(--colorNobleAccent);
+            }
+            [article-chapter] big {
+                font-size: 1.69em;
+                line-height: 1;
+            }
+        </style>
+
+
+    </article>
+
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ END -->
+</body>
+</html>
