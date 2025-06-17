@@ -82,9 +82,10 @@
         }
 
         p, blockquote {
-            margin:  0 0 1em 0;
+            margin:  0 1em 1em 0;
             padding: 0;
             font:    inherit;
+            max-width: 32em;
         }
 
     </style>
@@ -92,22 +93,35 @@
 
 </head>
 <body>
-    <article article-chapter>
-        <header>
+    <article article-chapter layout-enter>
+        <section layout-title>
             <h1>
-                Entrée
-                <small>/ enter</small>
+                Paris avec toi
             </h1>
-            <p>June 16, 2025</p>
-        </header>
-        <section>
-            <p>
-                The project is dedicated to the process of creation. In fact you are visiting a nice web-gallery of holiday trip into the city of Paris. In the background there is a path of creation where each step does matter. This including background story, involved people, used technologies and even the art of coding.
-            </p>
-            <p>
-                This one is the experiment to display and test an idea:
-                <b>To achieve magical results, try to keep the magic at every stage of creation.</b>
-            </p>
+        </section>
+        <section layout-cover>
+            <figure>
+                <img src="art/eiffelflower_white.svg" alt="">
+            </figure>
+        </section>
+        <section layout-info>
+            <header>
+                <h2>
+                    Entrée
+                    <small>/ enter</small>
+                </h2>
+                <p>June 16, 2025</p>
+            </header>
+            <section>
+                <p>
+                    The project is dedicated to the process of creation. In fact you are visiting a nice web-gallery of holiday trip into the city of Paris. In the background there is a path of creation where each step does matter. This including background story, involved people, used technologies and even the art of coding.
+                </p>
+                <p>
+                    This one is the experiment to display and test an idea:
+                    <strong>To achieve magical results, try to maintain the magic at every stage of creation.</strong>
+                </p>
+                <p text-accent><big>Scroll down</big></p>
+            </section>
         </section>
     </article>
 
@@ -165,6 +179,22 @@
                 background-color: var(--background-color);
                 color:            var(--color);
             }
+            [text-accent] {
+              --color:            var(--colorNobleAccent);
+                color:            var(--color);
+            }
+            [layout-title] {
+              --background-color: var(--colorNobleSea);
+              --color:            var(--colorNobleWhite);
+                background-color: var(--background-color);
+                color:            var(--color);
+            }
+            [layout-cover] {
+              --background-color: var(--colorNobleSky);
+              --color:            var(--colorNobleBlack);
+                background-color: var(--background-color);
+                color:            var(--color);
+            }
         </style>
 
         <style display-source>
@@ -178,6 +208,11 @@
                 white-space: normal;
             }
 
+            img, video {
+                display:  block;
+                max-width: 100%;
+            }
+
             [gallery-menu] {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
@@ -186,6 +221,29 @@
             [gallery-menu] img {
                 aspect-ratio: 1/1;
                 object-fit: cover;
+            }
+
+            [layout-enter] {
+                display: grid;
+                grid-template-columns: minmax(1rem, 1fr) 3fr minmax(1rem, 1fr) auto;
+                grid-template-rows: max-content 1fr max-content auto 1fr;
+                grid-template-areas:
+                    '. a c c'
+                    '. a . .'
+                    '. a . b'
+                    '. . . b'
+                    '. . . .'
+                    ;
+            }
+            [layout-enter] [layout-info]  { grid-area: b; }
+            [layout-enter] [layout-title] { grid-area: c; }
+            [layout-enter] [layout-cover] { grid-area: a; }
+            [layout-enter] [layout-title] {
+                display: grid;
+                place-items: center;
+            }
+            [layout-enter] [layout-cover] {
+                
             }
         </style>
 
@@ -198,13 +256,16 @@
             [article-chapter] header {
                 margin-bottom: 1.24em;
             }
-            [article-chapter] header h1 {
+            [article-chapter] h1 {
+                font-size: 3rem;
+            }
+            [article-chapter] header h2 {
                 font-size: 4rem;
                 border-bottom: solid 0.12em currentColor;
                 margin-bottom: 0.12em;
                 vertical-align: top;
             }
-            [article-chapter] header h1 small {
+            [article-chapter] header h2 small {
                 font-size: 0.42em;
                 display:   inline-block;
                 color:     var(--colorNobleAccent);
