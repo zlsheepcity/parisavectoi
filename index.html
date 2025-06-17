@@ -88,7 +88,7 @@
             max-width: 32em;
         }
 
-        a {
+        a[href] {
             color: inherit;
             text-decoration: underline;
         }
@@ -269,9 +269,9 @@
         [lemenu-grid] >[section-links] { grid-area: a ;}
         [lemenu-grid] {
           --grid-template-columns:
-                minmax(auto, 50vw)
+                minmax(auto, 69vw)
                 minmax(2rem, auto)
-                minmax(30vw, max-content)
+                minmax(20vw, max-content)
                 ;
           --grid-template-rows:
                 1fr
@@ -281,7 +281,7 @@
                 ;
         }
 
-        @media (max-width:40em) {
+        @media (max-width:60em) {
         [lemenu-grid] {
           --grid-template-columns:
                 1rem
@@ -307,7 +307,7 @@
             grid-gap: 0.5em;
             grid-template-columns: repeat(4,1fr);
         }
-        [section-links] a {
+        [section-links] a[href] {
             display: flex;
             flex-direction: column;
             position: relative;
@@ -328,6 +328,7 @@
             left:     0;
             right:    0;
             background-color: hsla(212, 34%, 29%, 0.69);
+            text-align: center;
         }
     </style>
 
@@ -349,7 +350,7 @@
         </section>
         <section section-links>
 
-            <a href="#source">
+            <a href="#lasource">
                 <img
                     src="art/flashweb/IMG_7775.jpg"
                     alt="">
@@ -390,6 +391,13 @@
         </section>
     </article>
 
+    <div
+        style="
+            background-color: var(--colorNobleSea);
+            height: min(10vw, 10vh);
+            margin-top: min(10vw, 10vh);
+        "></div>
+
     <style id="lasource-grid">
         [lasource-grid] {
             display:     grid;
@@ -426,8 +434,8 @@
                 auto
                 ;
           --grid-template-areas:
-                '. i i'
                 'a a a'
+                '. i i'
                 ;
         }
         }
@@ -435,6 +443,7 @@
 
 
     <article lasource-grid>
+        <a name="lasource"></a>
         <section section-info>
             <header>
                 <h2>
@@ -460,15 +469,7 @@
             <video --controls muted loop autoplay
               style="
                   object-fit: cover;
-                  height: 100vh;
-              "
-              --style="
-              transform: scaleX(-1.00) scaleY(1.00) rotate(0deg) ;
-              transform-origin: 50% 100% ;
-              object-position:  42%  52% ;
-              filter: saturate(60%) contrast(100%) brightness(100%);
-              aspect-ratio: 852 / 323 ;
-              --opacity: 0.5 ;
+                  max-height: 88vh;
               "><source type="video/webm"
                 src="art/videomix.webm"
                 /></video>
