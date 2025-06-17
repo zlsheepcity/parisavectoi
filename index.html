@@ -88,6 +88,11 @@
             max-width: 32em;
         }
 
+        a {
+            color: inherit;
+            text-decoration: underline;
+        }
+
     </style>
 
 
@@ -154,6 +159,8 @@
         }
         }
 
+        /* family */
+
         [entree-grid] >[decoration-title] {
             grid-area: var(--grid-area-decoration-title);
             background-color: var(--colorNobleSea);
@@ -192,6 +199,7 @@
             font-size: 4rem;
             border-bottom: solid 0.12em currentColor;
             margin-bottom: 0.12em;
+            padding-right: 1em;
             vertical-align: top;
         }
         [section-info] h2 small {
@@ -214,7 +222,6 @@
                 src="art/eiffelflower_white.svg"
                 alt="">
         </figure>
-        <section></section>
         <section section-title>
             <h1>Art project «Paris avec toi»</h1>
         </section>
@@ -246,42 +253,150 @@
         </section>
     </article>
 
-    <article article-chapter layout-enter>
-        <section layout-title>
-            <h1>
-                Paris avec toi
-            </h1>
-        </section>
-        <section layout-cover>
-            <figure>
-                <img
-                    style="
-                        transform: translateY(21%);
-                    "
-                    src="art/eiffelflower_white.svg"
-                    alt="">
-            </figure>
-        </section>
-        <section layout-info>
+    <style id="lemenu-grid">
+        [lemenu-grid] {
+            display:     grid;
+            min-height: 100vh;
+            grid-template-columns: var(--grid-template-columns);
+            grid-template-rows:    var(--grid-template-rows);
+            grid-template-areas:   var(--grid-template-areas);
+        }
+        [lemenu-grid] >[section-info]  { grid-area: i ;}
+        [lemenu-grid] >[section-links] { grid-area: a ;}
+        [lemenu-grid] {
+          --grid-template-columns:
+                minmax(auto, 50vw)
+                minmax(2rem, auto)
+                minmax(30vw, max-content)
+                ;
+          --grid-template-rows:
+                1fr
+                ;
+          --grid-template-areas:
+                'a . i'
+                ;
+        }
+
+        @media (max-width:40em) {
+        [lemenu-grid] {
+          --grid-template-columns:
+                1rem
+                1fr
+                1rem
+                ;
+          --grid-template-rows:
+                auto
+                auto
+                ;
+          --grid-template-areas:
+                '. i i'
+                'a a a'
+                ;
+        }
+        }
+
+        /* family */
+
+        [lemenu-grid] >[section-info] {
+            display:           flex;
+            flex-direction:  column;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+    </style>
+
+    <style id="section-links">
+        [section-links] {
+            align-self: center;
+            display: grid;
+            grid-gap: 0.5em;
+            grid-template-columns: repeat(4,1fr);
+        }
+        [section-links] a {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        [section-links] img {
+            display: block;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+        [section-links] span {
+            display: grid;
+            place-items: center;
+            font-size: 1.25rem;
+            line-height: 1;
+            padding: 0.5rem;
+            position: absolute;
+            bottom:   0;
+            left:     0;
+            right:    0;
+            background-color: hsla(212, 34%, 29%, 0.69);
+        }
+    </style>
+
+    <article lemenu-grid>
+        <section section-info>
             <header>
                 <h2>
-                    Entrée
-                    <small>/ enter</small>
+                    Le menu
+                    <small>
+                        / the menu
+                    </small>
                 </h2>
-                <p>June 16, 2025</p>
             </header>
-            <section>
+
                 <p>
-                    The project is dedicated to the process of creation. In fact you are visiting a nice web-gallery of holiday trip into the city of Paris. In the background there is a path of creation where each step does matter. This including background story, involved people, used technologies and even the art of coding.
+                    The menu is here to obey you.
                 </p>
-                <p>
-                    This one is the experiment to display and test an idea:
-                    <strong>To achieve magical results, try to maintain the magic at every stage of creation.</strong>
-                </p>
-                <p text-accent><big>Scroll down</big></p>
-            </section>
+
+        </section>
+        <section section-links>
+
+            <a href="#">
+                <img
+                    src="art/flashweb/IMG_7775.jpg"
+                    alt="">
+                <span>
+                    Source
+                </span>
+            </a>
+            <a href="#">
+                <img
+                    style="object-position: bottom"
+                    src="art/flashweb/IMG_7778.jpg"
+                    alt="">
+                <span>
+                    Pictures
+                </span>
+            </a>
+            <a href="#">
+                <img
+                    style="object-position: bottom"
+                    src="art/flashweb/IMG_7792.jpg"
+                    alt="">
+                <span>
+                    Code
+                </span>
+            </a>
+
+            <div></div>
+
+            <a href="#">
+                <img
+                    src="art/flashweb/IMG_7799.jpg"
+                    alt="">
+                <span>
+                    Typography
+                </span>
+            </a>
+
         </section>
     </article>
+
+
 
     <article article-chapter>
         <header>
@@ -292,13 +407,13 @@
         </header>
         <section gallery-menu>
             <figure>
-                <img src="art/flash/IMG_7775.JPG" alt="">
+                <img src="art/flashweb/IMG_7775.jpg" alt="">
             </figure>
             <figure>
-                <img src="art/flash/IMG_7778.JPG" alt="">
+                <img src="art/flashweb/IMG_7778.jpg" alt="">
             </figure>
             <figure>
-                <img src="art/flash/IMG_7792.JPG" alt="">
+                <img src="art/flashweb/IMG_7792.jpg" alt="">
             </figure>
         </section>
     </article>
