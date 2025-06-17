@@ -189,6 +189,10 @@
 
     <style id="section-info">
         [section-info] {
+            display:           flex;
+            flex-direction:  column;
+            justify-content: center;
+            padding: 1rem 0;
             font-size:   1.24rem;
             line-height: 1.5;
         }
@@ -294,16 +298,6 @@
                 ;
         }
         }
-
-        /* family */
-
-        [lemenu-grid] >[section-info] {
-            display:           flex;
-            flex-direction:  column;
-            justify-content: center;
-            padding: 1rem 0;
-        }
-
     </style>
 
     <style id="section-links">
@@ -355,12 +349,12 @@
         </section>
         <section section-links>
 
-            <a href="#">
+            <a href="#source">
                 <img
                     src="art/flashweb/IMG_7775.jpg"
                     alt="">
                 <span>
-                    Source
+                    La source
                 </span>
             </a>
             <a href="#">
@@ -396,27 +390,92 @@
         </section>
     </article>
 
+    <style id="lasource-grid">
+        [lasource-grid] {
+            display:     grid;
+            min-height: 100vh;
+            grid-template-columns: var(--grid-template-columns);
+            grid-template-rows:    var(--grid-template-rows);
+            grid-template-areas:   var(--grid-template-areas);
+        }
+        [lasource-grid] >[section-info]  { grid-area: i ;}
+        [lasource-grid] >[section-video] { grid-area: a ;}
+        [lasource-grid] {
+          --grid-template-columns:
+                minmax(auto, max-content)
+                minmax(2rem, auto)
+                minmax(30vw, max-content)
+                ;
+          --grid-template-rows:
+                1fr
+                ;
+          --grid-template-areas:
+                'a . i'
+                ;
+        }
+
+        @media (max-width:40em) {
+        [lasource-grid] {
+          --grid-template-columns:
+                1rem
+                1fr
+                1rem
+                ;
+          --grid-template-rows:
+                auto
+                auto
+                ;
+          --grid-template-areas:
+                '. i i'
+                'a a a'
+                ;
+        }
+        }
+    </style>
 
 
-    <article article-chapter>
-        <header>
-            <h1>
-                Le menu
-                <small>/ The menu</small>
-            </h1>
-        </header>
-        <section gallery-menu>
-            <figure>
-                <img src="art/flashweb/IMG_7775.jpg" alt="">
-            </figure>
-            <figure>
-                <img src="art/flashweb/IMG_7778.jpg" alt="">
-            </figure>
-            <figure>
-                <img src="art/flashweb/IMG_7792.jpg" alt="">
-            </figure>
+    <article lasource-grid>
+        <section section-info>
+            <header>
+                <h2>
+                    La source
+                    <small>
+                        / the source
+                    </small>
+                </h2>
+                <p>
+                    Paris, France, Summer 2025
+                </p>
+            </header>
+
+                <p>
+                    The city of Paris was chosen as proven source of inspiration. It is a great capital of european culture filled with different types of art and artists.
+                </p>
+                <p>
+                    Feelings and emotions gathered during the short trip were converted into memories and some media.
+                </p>
+
         </section>
+        <figure section-video>
+            <video --controls muted loop autoplay
+              style="
+                  object-fit: cover;
+                  height: 100vh;
+              "
+              --style="
+              transform: scaleX(-1.00) scaleY(1.00) rotate(0deg) ;
+              transform-origin: 50% 100% ;
+              object-position:  42%  52% ;
+              filter: saturate(60%) contrast(100%) brightness(100%);
+              aspect-ratio: 852 / 323 ;
+              --opacity: 0.5 ;
+              "><source type="video/webm"
+                src="art/videomix.webm"
+                /></video>
+        </figure>
     </article>
+
+
 
     <article>
 
