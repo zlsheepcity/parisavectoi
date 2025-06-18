@@ -20,8 +20,8 @@
 
 
     <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ FAVICON -->
-    <meta name="theme-color"             content="#314159">
-    <meta name="msapplication-TileColor" content="#314159">
+    <meta name="theme-color"             content="#314863">
+    <meta name="msapplication-TileColor" content="#314863">
     <meta name="msapplication-TileImage" content="art/icon512.png">
     <link rel="icon" type="image/png"       href="art/icon512.png">
     <link rel="apple-touch-icon"            href="art/icon512.png">
@@ -395,6 +395,7 @@
         [lasource-grid] {
             display:     grid;
             min-height: 100vh;
+            margin-bottom: 30vh;
             grid-template-columns: var(--grid-template-columns);
             grid-template-rows:    var(--grid-template-rows);
             grid-template-areas:   var(--grid-template-areas);
@@ -483,7 +484,11 @@
     <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ gallery -->
 
     <style id="article-gallery">
-
+        [quark-ratio]     { aspect-ratio: 3/4 }
+        [antiquark-ratio] { aspect-ratio: 4/3 }
+        [article-gallery] {
+          --space: 1rem;
+        }
         [article-gallery] >*,
         [article-gallery] {
             position: relative;
@@ -492,8 +497,17 @@
             display: grid;
         }
         [article-gallery] img {
-            display: block;
+            max-width:   100%;
+            display:    block;
             object-fit: cover;
+            object-position: var(--ox) var(--oy) ;
+          --ox: 50%;
+          --oy: 50%;
+            outline:
+                var(--space, 0)
+                solid
+                var(--background-color, black)
+                ;
         }
         [article-gallery] [figure-screen] {
             grid-area: 1 / 1 / -1 / -1 ;
@@ -519,12 +533,15 @@
             display: grid;
             grid-template: '. .' 100vh / 1fr 1fr;
         }
+
+
+
     </style>
 
+    <a name="gallery"></a>
     <article article-gallery>
-        <a name="gallery"></a>
 
-        <section gallery-screen>
+        <section gallery-screen id="screenInfoText">
             <figure figure-screen>
                 <img
                     src="art/flashweb/IMG_7733.jpg"
@@ -555,6 +572,50 @@
 
             </section>
         </section>
+
+        <style id="gallery-layer">
+            [gallery-layer] {
+                display: grid;
+                gap:     var(--space);
+            }
+            [gallery-layer].S3 {
+                grid-template-columns:
+                    minmax(10vw, auto)
+                    repeat(   3, 20vw)
+                    minmax(20vw, auto)
+                    ;
+                grid-template-rows:
+                    1fr
+                    max-content
+                    2fr
+                    ;
+              --area1: 2 / 2 / 3 / 3 ;
+              --area2: 2 / 3 / 3 / 4 ;
+              --area3: 2 / 4 / 3 / 5 ;
+                min-height: 100vh;
+            }
+        </style>
+
+        <section gallery-layer class="S3">
+            <figure style="grid-area:var(--area1)">
+                <img quark-ratio
+                    src="art/flashweb/IMG_7732.jpg"
+                    style="" alt="">
+            </figure>
+            <figure style="grid-area:var(--area2)">
+                <img quark-ratio
+                    src="art/flashweb/IMG_7743.jpg"
+                    style="" alt="">
+            </figure>
+            <figure style="grid-area:var(--area3)">
+                <img quark-ratio
+                    src="art/flashweb/IMG_7737.jpg"
+                    style="" alt="">
+            </figure>
+        </section>
+
+    </article>
+    <article article-gallery>
 
         <section gallery-screen>
             <figure figure-screen>
