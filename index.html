@@ -11,8 +11,9 @@
 
 
     <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ MICRODATA -->
-    <meta property="og:url"          content="">
-    <meta property="og:image"        content="">
+    <meta property="og:url"          content="https://zlsheepcity.github.io/parisavectoi/">
+    <meta property="og:image"
+          content="https://zlsheepcity.github.io/parisavectoi/art/socialcover.jpg">
     <meta property="og:image:width"  content="1200">
     <meta property="og:image:height" content="628">
     <meta property="og:type"         content="article">
@@ -359,16 +360,16 @@
                     La source
                 </span>
             </a>
-            <a href="#">
+            <a href="#gallery">
                 <img
                     style="object-position: bottom"
                     src="art/flashweb/IMG_7778.jpg"
                     alt="">
                 <span>
-                    Pictures
+                    Les images
                 </span>
             </a>
-            <a href="#">
+            <a href="#lecode">
                 <img
                     style="object-position: bottom"
                     src="art/flashweb/IMG_7792.jpg"
@@ -380,12 +381,31 @@
 
             <div></div>
 
-            <a href="#">
+            <a href="#typographie">
                 <img
                     src="art/flashweb/IMG_7799.jpg"
                     alt="">
                 <span>
-                    Typography
+                    La typographie
+                </span>
+            </a>
+
+            <div></div>
+
+            <a href="#summary">
+                <img
+                    src="art/flashweb/IMG_7788.jpg"
+                    alt="">
+                <span>
+                    Le résumé
+                </span>
+            </a>
+            <a href="#references">
+                <img
+                    src="art/flashweb/IMG_7743.jpg"
+                    alt="">
+                <span>
+                    Les références
                 </span>
             </a>
 
@@ -1227,6 +1247,7 @@
     <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ The Code -->
     <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ The Code -->
 
+    <a name="typographie"></a>
     <article lasource-grid>
         <section section-info>
             <header>
@@ -1245,7 +1266,7 @@
                     The typography layout was inspired by Edward Tufte books and paris galleries.
                 </p>
                 <p style="max-width: 24em">
-                    You may find related links in refferences section to get more interesting and beautyful details.
+                    You may find related links in references section to get more interesting and beautyful details.
                 </p>
 
         </section>
@@ -1256,20 +1277,55 @@
     <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ The Code -->
     <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ The Code -->
 
-    <article lasource-grid>
-        <section section-info>
-            <header>
-                <h2>
-                    The Code
-                    <small>
-                        / the code
-                    </small>
-                </h2>
-            </header>
-        </section>
-    </article>
+    <style id="lecode-grid">
+        [lecode-grid] {
+            display:     grid;
+            grid-template-columns: var(--grid-template-columns);
+            grid-template-rows:    var(--grid-template-rows);
+            grid-template-areas:   var(--grid-template-areas);
+        }
+        [lecode-grid] >[section-info]  { grid-area: i ;}
+        [lecode-grid] >[section-video] { grid-area: a ;}
+        [lecode-grid] >[section-decor] { grid-area: o ;}
+        [lecode-grid] {
+          --grid-template-columns:
+                minmax(auto, max-content)
+                minmax(2rem, auto)
+                minmax(30vw, max-content)
+                ;
+          --grid-template-rows:
+                min(10vw, 10vh)
+                1fr
+                ;
+          --grid-template-areas:
+                'o o o'
+                'a . i'
+                ;
+        }
 
-    <article>
+        @media (max-width:40em) {
+        [lecode-grid] {
+          --grid-template-columns:
+                1rem
+                1fr
+                1rem
+                ;
+          --grid-template-rows:
+                min(10vw, 10vh)
+                auto
+                auto
+                ;
+          --grid-template-areas:
+                'o o o'
+                'a a a'
+                '. i i'
+                ;
+        }
+        }
+    </style>
+
+    <a name="lecode"></a>
+    <article id="display-source">
 
         <style display-source>
             [display-source] {
@@ -1279,6 +1335,33 @@
                 white-space: pre-wrap;
             }
         </style>
+
+    </article>
+
+    <article lecode-grid>
+        <section section-info>
+            <header>
+                <h2>
+                    Le code
+                    <small>
+                        / the code
+                    </small>
+                </h2>
+            </header>
+
+                <p>
+                    All gathered from the trip — including digital media, inspiration, motivation, ideas — were converted into web page code.
+                </p>
+                <p>
+                    Imagine if you got some positive vibes from the previous sections. All this feelings are now just a pile of symbols. Beeing converted into code, this feelings could be reproduced, copied, changed and even updated to the next level.
+                </p>
+                <p>
+                    In 2025 the project code was hosted and provided by gihub.com service. You may find the full code repository link in references section or just enjoy the selected gallery below.
+                </p>
+        </section>
+    </article>
+
+    <article id="code-snippets">
 
         <style display-source>
             /* colors */
@@ -1398,7 +1481,84 @@
             }
         </style>
 
+    </article>
 
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ summary -->
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ summary -->
+    <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ summary -->
+
+    <a name="summary"></a>
+    <article lasource-grid>
+        <section section-info>
+            <header>
+                <h2>
+                    Le résumé
+                    <small>
+                        / summary
+                    </small>
+                </h2>
+            </header>
+
+                <p>
+                    It was typical art project in web page format. With beautiful pictures, illustrations, philosophycal notes and creative ideas.
+                </p>
+                <p>
+                    The project target is a web page viewer. Literally You are the target now.
+                </p>
+                <p>
+                    The project goal is achieved if You got any kind of fresh ideas for yourself. The source of this new ideas was located in Paris even if you werent there. Magic, yes!
+                </p>
+
+
+        </section>
+    </article>
+
+    <a name="references"></a>
+    <article lecode-grid>
+        <section section-info>
+            <header>
+                <h2>
+                    Les références
+                    <small>
+                        / references
+                    </small>
+                </h2>
+            </header>
+
+                <h4>Authors social</h4>
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/katerina_jakovleva/"
+                            >instagram.com/katerina_jakovleva</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/zinoviasmartfon/"
+                            >instagram.com/zinoviasmartfon</a>
+                    </li>
+                </ul>
+
+                <h4>Code repository</h4>
+                <ul>
+                    <li>
+                        <a href="https://github.com/zlsheepcity/parisavectoi"
+                            >github.com/zlsheepcity/parisavectoi</a>
+                    </li>
+                </ul>
+
+                <h4>Mentions</h4>
+                <ul>
+                    <li>
+                        <a href="http://vollkorn-typeface.com/"
+                            >Vollkorn typeface</a> designed by Friedrich Althausen
+                    </li>
+                    <li>
+                        <a href="https://edwardtufte.github.io/tufte-css/"
+                            >Edward Tufte CSS project</a> by Dave Liepmann
+                    </li>
+                </ul>
+
+
+        </section>
     </article>
 
     <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ END -->
